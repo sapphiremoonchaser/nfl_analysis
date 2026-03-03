@@ -31,11 +31,11 @@ app.layout = html.Div([
 
     dcc.Dropdown(
         id='team-dropdown',
-        options=[{
-            'label': t,
-            'value': t
-        } for type in teams
-        ]
+        options=[
+            {'label': t, 'value': t}
+            for t in teams
+        ],
+        value=teams[0]
     ),
 
     html.Div([
@@ -130,4 +130,4 @@ def update_dashoard(selected_team):
     return pass_fig, rush_fig, bar_fig
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run(debug=True)

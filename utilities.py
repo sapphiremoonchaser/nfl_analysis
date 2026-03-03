@@ -1,3 +1,5 @@
+import nfl_data_py as nfl
+
 # Define distance buckets
 def yards_to_go_bucket(x):
     """
@@ -12,3 +14,17 @@ def yards_to_go_bucket(x):
         return 'medium'
     else:
         return 'long'
+
+
+# Get list of teams
+def fetch_list_of_teams():
+    # Get most recent year
+    pbp = nfl.import_pbp_data([2025])
+
+    teams = (
+        pbp['posteam']
+        .dropna()
+        .unique()
+    )
+
+    return sorted(teams)

@@ -1,6 +1,3 @@
-from operator import index
-
-from Tools.scripts.make_ctype import values
 from dash import (
     Dash,
     dcc,
@@ -10,9 +7,7 @@ from dash import (
 )
 import plotly.express as px
 import plotly.graph_objects as go
-from numpy.ma.extras import column_stack
 
-from examples.epa_dashboard.epa_dashboard_dataframes import team_play_type_distribution
 from utilities import fetch_list_of_teams
 from epa_dashboard_dataframes import (
     team_vs_league_epa,
